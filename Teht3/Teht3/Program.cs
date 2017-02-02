@@ -124,12 +124,12 @@ namespace Teht3
                         if(kalastajat[i].kalastaja_id == kalat[a].kalastaja_id)
                         {
                             Console.Write(" -" + kalat[a].laji + " " + kalat[a].pituus + "cm " + kalat[a].paino + "kg");
-                        }
-                        for (int b = 0; b < kalapaikat.Count(); b++)
-                        {
-                            if (kalat[a].kalapaikka_id == kalapaikat[b].kalapaikka_id)
+                            for (int b = 0; b < kalapaikat.Count(); b++)
                             {
-                                Console.WriteLine("; " + kalapaikat[b].kpaikka + ", " + kalapaikat[b].sijainti);
+                                if (kalat[a].kalapaikka_id == kalapaikat[b].kalapaikka_id)
+                                {
+                                    Console.WriteLine("; " + kalapaikat[b].kpaikka + ", " + kalapaikat[b].sijainti);
+                                }
                             }
                         }
                     }
