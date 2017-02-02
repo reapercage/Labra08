@@ -21,7 +21,7 @@ namespace Teht1
         {
             int heittokerrat;
             int heittoSumma = 0;
-            int keskiarvo = 1;
+            double keskiarvo = 1;
             List<int> heitot = new List<int>();
             Noppa nop = new Noppa();
             nop.ThrowNoppa();
