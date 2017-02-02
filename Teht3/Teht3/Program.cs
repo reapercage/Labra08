@@ -68,6 +68,13 @@ namespace Teht3
             for (int i = kalat.Count()-1; i < kalat.Count(); i ++)
             {
                 Console.WriteLine("Kalastaja " + kalastajaNimi + " sai kalan:\n -" + kalat[i].laji + " " + kalat[i].pituus + "cm " + kalat[i].paino + "kg");
+                for(int a = kalapaikat.Count()-1; a < kalapaikat.Count(); a++)
+                {
+                    if (kalat[i].kalapaikka_id == kalapaikat[a].kalapaikka_id)
+                    {
+                        Console.WriteLine(" -" + kalapaikat[a].kpaikka + ", " + kalapaikat[a].sijainti);
+                    }
+                }
             }
 
 
@@ -90,7 +97,16 @@ namespace Teht3
             for (int i = kalat.Count() - 1; i < kalat.Count(); i++)
             {
                 Console.WriteLine("Kalastaja " + kalastajaNimi + " sai kalan:\n -" + kalat[i].laji + " " + kalat[i].pituus + "cm " + kalat[i].paino + "kg");
+                for (int a = kalapaikat.Count() - 1; a < kalapaikat.Count(); a++)
+                {
+                    if (kalat[i].kalapaikka_id == kalapaikat[a].kalapaikka_id)
+                    {
+                        Console.WriteLine(" -" + kalapaikat[a].kpaikka + ", " + kalapaikat[a].sijainti);
+                    }
+                }
             }
+
+            Console.WriteLine("Kaikki kalat:");
 
             //käy läpi for kalastajat
             //if  kalastajat[].kalastaja_id == kala[].kalastaja_id , print kala[x].*
