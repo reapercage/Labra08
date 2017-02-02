@@ -2,6 +2,7 @@ UML
 
 Kala
 ------
+-kala_id
 -kalastaja_id
 -kalapaikka_id
 -laji
