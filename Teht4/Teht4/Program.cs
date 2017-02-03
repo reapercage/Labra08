@@ -72,9 +72,10 @@ namespace Teht4
         static void Main(string[] args)
         {
             Shapes muodot = new Shapes();
-            muodot.AddCircle(new Circle { Name = "ympr1", Radius = 1 });
-            
-            foreach(Circle c in muodot.Kuviot)
+            Circle crc = new Circle { Name = "ympr1", Radius = 1 };
+            muodot.AddCircle(crc);
+
+            foreach (Circle c in muodot.Kuviot)
             {
                 Console.WriteLine(c.ToString());
             }
