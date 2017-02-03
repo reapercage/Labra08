@@ -30,13 +30,29 @@ namespace Teht5
             avg = total / array.Length;
             return avg;
         }
-        static void Min()
+        public static double Min(double[] array)
         {
-
+            double a = array[0];
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (a >= array[i])
+                {
+                    a = array[i];
+                }
+            }
+            return a;
         }
-        static void Max()
+        public static double Max(double[] array)
         {
-
+            double a = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (a <= array[i])
+                {
+                    a = array[i];
+                }
+            }
+            return a;
         }
     }
     class Program
@@ -44,6 +60,12 @@ namespace Teht5
         static void Main(string[] args)
         {
             double[] luvut = new double[] { 1.0, 2.0, 3.3, 5.5, 6.3, -4.5, 12.0 };
+            Console.WriteLine("Sum = " + ArrayCalcs.Sum(luvut));
+            Console.WriteLine("Ave = " + ArrayCalcs.Average(luvut));
+            Console.WriteLine("Min = " + ArrayCalcs.Min(luvut));
+            Console.WriteLine("Max = " + ArrayCalcs.Max(luvut));
+            Console.ReadKey();
+
             //Erilaisia toteutuksia:
             //
             //ArrayCalcs laskut = new ArrayCalcs();
@@ -52,10 +74,6 @@ namespace Teht5
             //lasku = new ArrayCalcs();
             //Console.WriteLine(lasku.Sum(luvut));
             //Console.WriteLine(Sum(luvut));
-            Console.WriteLine("Sum = " + ArrayCalcs.Sum(luvut) + "\nAve = " + ArrayCalcs.Average(luvut));
-
-            Console.ReadKey();
-
         }
         static double Sum(double[] taulu)
         {
