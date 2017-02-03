@@ -8,24 +8,27 @@ namespace Teht5
 {
     class ArrayCalcs
     {
-        public double Yhteenlasku
+        //
+        //public double Sum(double[] taulu)
+        public static double Sum(double[] array)
         {
-            get;
-            set;
-        }
-
-        static double Sum(double[] taulu)
-        {
-            double summa = 0;
-            for(int i = 0; i < taulu.Length; i++)
+            double sum = 0;
+            for(int i = 0; i < array.Length; i++)
             {
-                summa = summa + taulu[i];
+                sum = sum + array[i];
             }
-            return summa;
+            return sum;
         }
-        static void Average()
+        public static double Average(double[] array)
         {
-
+            double avg = 0;
+            double total = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                total = total + array[i];
+            }
+            avg = total / array.Length;
+            return avg;
         }
         static void Min()
         {
@@ -41,9 +44,16 @@ namespace Teht5
         static void Main(string[] args)
         {
             double[] luvut = new double[] { 1.0, 2.0, 3.3, 5.5, 6.3, -4.5, 12.0 };
-            ArrayCalcs laskut = new ArrayCalcs();
-            //laskut;
-            Console.WriteLine(Sum(luvut));
+            //Erilaisia toteutuksia:
+            //
+            //ArrayCalcs laskut = new ArrayCalcs();
+            //laskut.Yhteenlasku = 5;
+            //ArrayCalcs lasku;
+            //lasku = new ArrayCalcs();
+            //Console.WriteLine(lasku.Sum(luvut));
+            //Console.WriteLine(Sum(luvut));
+            Console.WriteLine("Sum = " + ArrayCalcs.Sum(luvut) + "\nAve = " + ArrayCalcs.Average(luvut));
+
             Console.ReadKey();
 
         }
