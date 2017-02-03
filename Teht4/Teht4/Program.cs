@@ -16,46 +16,37 @@ namespace Teht4
     }
     class Circle : Shape
     {
-        private double radius;
+        public double Radius;
         private double area;
         private double circumference;
-
-        public double Radius
-        {
-            get
-            {
-                return radius;
-            }
-            set
-            {
-                radius = value;
-            }
-        }
-
         public override void Area()
         {
-            area = Math.PI * Math.Pow(radius,2);
+            area = Math.PI * Math.Pow(Radius,2);
         }
         public override void Circumference()
         {
-            circumference = 2 * Math.PI * radius;
+            circumference = 2 * Math.PI * Radius;
+        }
+        public override string ToString()
+        {
+            return Name + " " + Radius + " " + area;
         }
 
     }
     class Rectangle : Shape
     {
-        private double width;
-        private double height;
+        public double Width { get; set; }
+        public double Height { get; set; }
         private double area;
         private double circumference;
 
         public override void Area()
         {
-            area = width * height;
+            area = Width * Height;
         }
         public override void Circumference()
         {
-            circumference = 2 * width + 2 * height;
+            circumference = 2 * Width + 2 * Height;
         }
 
     }
@@ -66,12 +57,28 @@ namespace Teht4
         {
             get { return shapes; }
         }
+        public void AddCircle(Circle crc)
+        {
+            shapes.Add(crc);
+        }
+        public void AddRectangle(Rectangle rec)
+        {
+            shapes.Add(rec);
+        }
 
     }
     class Program
     {
         static void Main(string[] args)
         {
+            Shapes muodot = new Shapes();
+            muodot.AddCircle(new Circle { Name = "ympr1", Radius = 1 });
+            
+            foreach(Circle c in muodot.Kuviot)
+            {
+                Console.WriteLine(c.ToString());
+            }
+            Console.ReadKey();
         }
     }
 }
