@@ -46,6 +46,17 @@ namespace Teht6
         {
             invoice.Add(ini);
         }
+        public InvoiceItem FindItem(int index)
+        {
+            if(index < invoice.Count)
+            {
+                return invoice.ElementAt(index);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public double Total
         {
             get { return Total; }
@@ -65,8 +76,16 @@ namespace Teht6
             Invoice ostoskori = new Invoice();
             ostoskori.Customer = "Pertti Keinonen";
             InvoiceItem ostos = new InvoiceItem { Name = "Eggs", Price = 1.40, Quantity = 1 };
+            InvoiceItem ostos2 = new InvoiceItem { Name = "Bread", Price = 2.19, Quantity = 1 };
             ostoskori.AddItem(ostos);
-            Console.WriteLine(ostos.ToString());
+            ostoskori.AddItem(ostos2);
+            //Console.WriteLine(ostos.ToString());
+            //Console.WriteLine(ostos2.ToString());
+            foreach(InvoiceItem i in ostoskori.Ostokset)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             Console.ReadKey();
         }
     }
