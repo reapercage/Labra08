@@ -31,7 +31,7 @@ namespace Teht6
         }
         //ToString()
     }
-    class Invoice : InvoiceItem
+    class Invoice
     {
         private double total;
         public string Customer { get; set; }
