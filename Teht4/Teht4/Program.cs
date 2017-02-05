@@ -29,7 +29,7 @@ namespace Teht4
         }
         public override string ToString()
         {
-            return Name + " " + Radius + " " + area;
+            return Name + " Radius=" + Radius + " Area=" + area + " Circumference=" + circumference;
         }
 
     }
@@ -48,6 +48,10 @@ namespace Teht4
         {
             circumference = 2 * Width + 2 * Height;
         }
+        public override string ToString()
+        {
+            return Name + " Width=" + Width + " Height=" + Height + " Area=" + area + " Circumference=" + circumference;
+        }
 
     }
     class Shapes
@@ -57,12 +61,20 @@ namespace Teht4
         {
             get { return shapes; }
         }
+        public Shapes()
+        {
+            shapes = new List<Shape>();
+        }
         public void AddCircle(Circle crc)
         {
+            crc.Area();
+            crc.Circumference();
             shapes.Add(crc);
         }
         public void AddRectangle(Rectangle rec)
         {
+            rec.Area();
+            rec.Circumference();
             shapes.Add(rec);
         }
 
@@ -72,12 +84,14 @@ namespace Teht4
         static void Main(string[] args)
         {
             Shapes muodot = new Shapes();
-            Circle crc = new Circle { Name = "ympr1", Radius = 1 };
+            Circle crc = new Circle { Name = "Circle", Radius = 1 };
             muodot.AddCircle(crc);
+            Rectangle rec = new Rectangle { Name = "Rectangle", Height = 20, Width = 40};
+            muodot.AddRectangle(rec);
 
-            foreach (Circle c in muodot.Kuviot)
+            foreach (Shape s in muodot.Kuviot)
             {
-                Console.WriteLine(c.ToString());
+                Console.WriteLine(s.ToString());
             }
             Console.ReadKey();
         }
