@@ -29,7 +29,7 @@ namespace Teht4
         }
         public override string ToString()
         {
-            return Name + " Radius=" + Radius + " Area=" + area + " Circumference=" + circumference;
+            return Name + " Radius=" + Radius.ToString("0.00") + " Area=" + area.ToString("0.00") + " Circumference=" + circumference.ToString("0.00");
         }
 
     }
@@ -50,7 +50,7 @@ namespace Teht4
         }
         public override string ToString()
         {
-            return Name + " Width=" + Width + " Height=" + Height + " Area=" + area + " Circumference=" + circumference;
+            return Name + " Width=" + Width.ToString("0.00") + " Height=" + Height.ToString("0.00") + " Area=" + area.ToString("0.00") + " Circumference=" + circumference.ToString("0.00");
         }
 
     }
